@@ -118,11 +118,36 @@
                 </nav>
 
                 <!-- Mobile Menu Button -->
-                <button class="lg:hidden text-[var(--dark-text-color)] focus:outline-none">
+                <button class="lg:hidden text-[var(--dark-text-color)] focus:outline-none" id="mobile-menu-toggle">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden bg-white shadow-lg hidden">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#services" class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-[var(--font-family-body)] transition-colors duration-300 py-2 border-b border-[var(--light-border-color)]">Services</a>
+                <a href="#about" class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-[var(--font-family-body)] transition-colors duration-300 py-2 border-b border-[var(--light-border-color)]">About Us</a>
+                <a href="#gallery" class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-[var(--font-family-body)] transition-colors duration-300 py-2 border-b border-[var(--light-border-color)]">Gallery</a>
+                <a href="#booking" class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-[var(--font-family-body)] transition-colors duration-300 py-2 border-b border-[var(--light-border-color)]">Instant Quote</a>
+                <a href="#guarantee" class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-[var(--font-family-body)] transition-colors duration-300 py-2 border-b border-[var(--light-border-color)]">Our Guarantee</a>
+                <a href="#testimonials" class="text-[var(--dark-text-color)] hover:text-[var(--primary-color)] font-[var(--font-family-body)] transition-colors duration-300 py-2 border-b border-[var(--light-border-color)]">Testimonials</a>
+                <a href="#contact" class="bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-4 py-3 rounded-[var(--button-rounded-radius)] font-[var(--font-family-body)] font-semibold hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 text-center mt-2">Book Your Cleaning Now</a>
+            </div>
+        </div>
+
+        <!-- JavaScript for mobile menu -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            });
+        </script>
     </header>
 
     <!-- Hero Section -->
@@ -176,12 +201,29 @@
                         </a>
                     </div>
 
-                    <!-- Trust Signal -->
-                    <p class="text-sm text-[var(--gray-text-color)] flex items-center">
-                        <i class="fas fa-shield-alt text-[var(--accent-color)] mr-2"></i>
-                        No credit card required • Same-day availability • 100% satisfaction
-                        guaranteed
-                    </p>
+                    <!-- Risk Reversal -->
+                    <div class="bg-gradient-to-r from-[var(--accent-color)] to-[var(--primary-color)] rounded-xl p-4 text-white">
+                        <p class="text-sm text-center flex items-center justify-center">
+                            <i class="fas fa-shield-alt mr-2"></i>
+                            <strong>Zero Risk Guarantee:</strong> No credit card required • Same-day availability • 100% satisfaction guaranteed or money back
+                        </p>
+                    </div>
+
+                    <!-- Additional Trust Signals -->
+                    <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+                        <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm">
+                            <i class="fas fa-check-circle text-[var(--accent-color)] mr-1"></i>
+                            <span class="text-[var(--dark-text-color)] text-xs font-medium">No Obligation</span>
+                        </div>
+                        <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm">
+                            <i class="fas fa-check-circle text-[var(--accent-color)] mr-1"></i>
+                            <span class="text-[var(--dark-text-color)] text-xs font-medium">Free Cancellation</span>
+                        </div>
+                        <div class="flex items-center bg-white px-3 py-1 rounded-full shadow-sm">
+                            <i class="fas fa-check-circle text-[var(--accent-color)] mr-1"></i>
+                            <span class="text-[var(--dark-text-color)] text-xs font-medium">Background Checked Staff</span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right Image -->
@@ -326,7 +368,211 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Gallery/Portfolio Section -->
+    <section id="gallery" class="py-20 bg-gradient-to-br from-white to-[var(--light-background-color)]">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] mb-4">
+                    Our Cleaning <span class="text-[var(--primary-color)]">Gallery</span>
+                </h2>
+                <p class="text-lg text-[var(--gray-text-color)]">
+                    See the transformation for yourself! Here are some before and after pictures of our work.
+                </p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/7c4d5e6f-7890-4abc-1234-567890abcdef/public" alt="Before cleaning - kitchen" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                            <h3 class="font-bold text-lg">Kitchen Deep Clean</h3>
+                            <p class="text-sm opacity-80">Before</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/8d5e6f7g-8901-5bcd-2345-678901abcdef/public" alt="After cleaning - kitchen" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                            <h3 class="font-bold text-lg">Kitchen Deep Clean</h3>
+                            <p class="text-sm opacity-80">After</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/9e6f7g8h-9012-6cde-3456-789012abcdef/public" alt="Before cleaning - bathroom" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                            <h3 class="font-bold text-lg">Bathroom Sanitization</h3>
+                            <p class="text-sm opacity-80">Before</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/0f7g8h9i-0123-7def-4567-890123abcdef/public" alt="After cleaning - bathroom" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                            <h3 class="font-bold text-lg">Bathroom Sanitization</h3>
+                            <p class="text-sm opacity-80">After</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/1g8h9i0j-1234-8efg-5678-901234abcdef/public" alt="Office cleaning before" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                            <h3 class="font-bold text-lg">Office Space Cleaning</h3>
+                            <p class="text-sm opacity-80">Before</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="relative overflow-hidden">
+                        <img src="https://imagedelivery.net/xaKlCos5cTg_1RWzIu_h-A/2h9i0j1k-2345-9fgh-6789-012345abcdef/public" alt="Office cleaning after" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                            <h3 class="font-bold text-lg">Office Space Cleaning</h3>
+                            <p class="text-sm opacity-80">After</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-12">
+                <p class="text-lg text-[var(--gray-text-color)] mb-6">
+                    Ready to see the same transformation in your space?
+                </p>
+                <a href="#contact" class="inline-block bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-10 py-4 rounded-[var(--button-rounded-radius)] font-bold text-lg hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 hover:scale-105 shadow-xl">
+                    Book Your Cleaning Now
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals/Certifications Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] mb-4">
+                    Trusted by <span class="text-[var(--primary-color)]">Homes & Businesses</span>
+                </h2>
+                <p class="text-lg text-[var(--gray-text-color)]">
+                    We maintain the highest standards with certifications and insurance to ensure your peace of mind.
+                </p>
+            </div>
+
+            <!-- Trust Signals Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <!-- Certified Professionals -->
+                <div class="bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="bg-[var(--primary-color)] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-user-check text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                        Certified Professionals
+                    </h3>
+                    <p class="text-[var(--gray-text-color)]">
+                        All staff complete professional training certification
+                    </p>
+                </div>
+
+                <!-- Fully Insured -->
+                <div class="bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="bg-[var(--accent-color)] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-shield-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                        Fully Insured
+                    </h3>
+                    <p class="text-[var(--gray-text-color)]">
+                        Comprehensive coverage for all properties
+                    </p>
+                </div>
+
+                <!-- Eco-Certified Products -->
+                <div class="bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="bg-[var(--accent4-color)] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-leaf text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                        Eco-Certified
+                    </h3>
+                    <p class="text-[var(--gray-text-color)]">
+                        All products meet environmental safety standards
+                    </p>
+                </div>
+
+                <!-- Background Checked -->
+                <div class="bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                    <div class="bg-[var(--primary-color)] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-fingerprint text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                        Background Checked
+                    </h3>
+                    <p class="text-[var(--gray-text-color)]">
+                        All team members pass thorough background checks
+                    </p>
+                </div>
+            </div>
+
+            <!-- Certifications Banner -->
+            <div class="mt-16 bg-gradient-to-r from-[var(--primary-color)] to-[var(--accent4-color)] rounded-2xl p-8 text-center">
+                <h3 class="text-2xl font-bold text-white mb-4">
+                    Industry Certifications & Awards
+                </h3>
+                <div class="flex flex-wrap justify-center items-center gap-8">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mb-2">
+                            <i class="fas fa-trophy text-[var(--primary-color)] text-2xl"></i>
+                        </div>
+                        <p class="text-white text-sm font-medium">Best Cleaning Service 2024</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mb-2">
+                            <i class="fas fa-certificate text-[var(--accent-color)] text-2xl"></i>
+                        </div>
+                        <p class="text-white text-sm font-medium">Green Cleaning Certified</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mb-2">
+                            <i class="fas fa-medal text-[var(--accent2-color)] text-2xl"></i>
+                        </div>
+                        <p class="text-white text-sm font-medium">Trusted Business Badge</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white w-16 h-16 rounded-full flex items-center justify-center mb-2">
+                            <i class="fas fa-hands-helping text-[var(--accent4-color)] text-2xl"></i>
+                        </div>
+                        <p class="text-white text-sm font-medium">Member of Ghana Cleaning Association</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery/Portfolio Section -->
     <section class="py-20 bg-gradient-to-br from-[var(--light-background-color)] to-white">
         <div class="container mx-auto px-4">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -367,7 +613,7 @@
                         what truly matters.
                     </p>
 
-                    <div class="space-y-4">
+                    <div class="space-y-6">
                         <div class="flex items-start space-x-4">
                             <div class="bg-[var(--accent-color)] rounded-full p-2 mt-1 flex-shrink-0">
                                 <i class="fas fa-check text-white"></i>
@@ -410,6 +656,50 @@
                                     Move-in/move-out, post-construction, and seasonal deep cleaning
                                     services available.
                                 </p>
+                            </div>
+                        </div>
+
+                        <!-- Service Customization Options -->
+                        <div class="mt-8 pt-6 border-t border-[var(--light-border-color)]">
+                            <h4 class="text-lg font-bold text-[var(--dark-text-color)] mb-4">
+                                Customize Your Service
+                            </h4>
+
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="kitchen-deep" class="w-4 h-4 text-[var(--primary-color)] rounded">
+                                    <label for="kitchen-deep" class="ml-3 text-[var(--dark-text-color)]">Deep Kitchen Clean (+15GHS)</label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="bathroom-sanitize" class="w-4 h-4 text-[var(--primary-color)] rounded">
+                                    <label for="bathroom-sanitize" class="ml-3 text-[var(--dark-text-color)]">Bathroom Sanitization (+10GHS)</label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="window-inside" class="w-4 h-4 text-[var(--primary-color)] rounded">
+                                    <label for="window-inside" class="ml-3 text-[var(--dark-text-color)]">Inside Windows (+20GHS)</label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="fridge-interior" class="w-4 h-4 text-[var(--primary-color)] rounded">
+                                    <label for="fridge-interior" class="ml-3 text-[var(--dark-text-color)]">Fridge Interior Clean (+15GHS)</label>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="oven-deep" class="w-4 h-4 text-[var(--primary-color)] rounded">
+                                    <label for="oven-deep" class="ml-3 text-[var(--dark-text-color)]">Oven Deep Clean (+25GHS)</label>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <label class="block text-[var(--dark-text-color)] font-medium mb-2">Service Frequency</label>
+                                <select class="w-full p-3 border border-[var(--light-border-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">
+                                    <option>One-time service</option>
+                                    <option>Weekly (15% discount)</option>
+                                    <option>Bi-weekly (10% discount)</option>
+                                    <option>Monthly (5% discount)</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -509,6 +799,396 @@
                     <i class="fas fa-clock mr-2"></i>Same-day service available • Free
                     quotes • No obligations
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Booking/Estimation Calculator -->
+    <section id="booking" class="py-20 bg-gradient-to-br from-white to-[var(--light-background-color)]">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] mb-4">
+                    Get an <span class="text-[var(--primary-color)]">Instant Quote</span>
+                </h2>
+                <p class="text-lg text-[var(--gray-text-color)]">
+                    Enter your details below and get an immediate estimate for your cleaning service.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Calculator Form -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-[var(--dark-text-color)] mb-6">
+                            Estimate Your Cleaning Cost
+                        </h3>
+
+                        <form id="booking-calculator">
+                            <!-- Service Type -->
+                            <div class="mb-6">
+                                <label class="block text-[var(--dark-text-color)] font-medium mb-3">
+                                    Select Service Type
+                                </label>
+                                <select id="service-type" class="w-full p-4 border border-[var(--light-border-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">
+                                    <option value="home">Home Cleaning</option>
+                                    <option value="office">Office Cleaning</option>
+                                    <option value="deep">Deep Cleaning</option>
+                                    <option value="move">Move-in/Move-out</option>
+                                    <option value="post">Post Construction</option>
+                                </select>
+                            </div>
+
+                            <!-- Room Count -->
+                            <div class="mb-6">
+                                <label class="block text-[var(--dark-text-color)] font-medium mb-3">
+                                    Number of Bedrooms
+                                </label>
+                                <input type="range" id="bedrooms" min="1" max="10" value="3" class="w-full mb-2">
+                                <div class="flex justify-between">
+                                    <span>1</span>
+                                    <span id="bedrooms-value" class="font-bold">3</span>
+                                    <span>10</span>
+                                </div>
+                            </div>
+
+                            <!-- Bathroom Count -->
+                            <div class="mb-6">
+                                <label class="block text-[var(--dark-text-color)] font-medium mb-3">
+                                    Number of Bathrooms
+                                </label>
+                                <input type="range" id="bathrooms" min="1" max="8" value="2" class="w-full mb-2">
+                                <div class="flex justify-between">
+                                    <span>1</span>
+                                    <span id="bathrooms-value" class="font-bold">2</span>
+                                    <span>8</span>
+                                </div>
+                            </div>
+
+                            <!-- Additional Services -->
+                            <div class="mb-6">
+                                <label class="block text-[var(--dark-text-color)] font-medium mb-3">
+                                    Additional Services
+                                </label>
+                                <div class="space-y-3">
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="oven-cleaning" class="w-5 h-5 text-[var(--primary-color)] rounded">
+                                        <label for="oven-cleaning" class="ml-3 text-[var(--dark-text-color)]">Oven Cleaning (+25GHS)</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="fridge-cleaning" class="w-5 h-5 text-[var(--primary-color)] rounded">
+                                        <label for="fridge-cleaning" class="ml-3 text-[var(--dark-text-color)]">Fridge Cleaning (+20GHS)</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="window-cleaning" class="w-5 h-5 text-[var(--primary-color)] rounded">
+                                        <label for="window-cleaning" class="ml-3 text-[var(--dark-text-color)]">Window Cleaning (+30GHS)</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="carpet-cleaning" class="w-5 h-5 text-[var(--primary-color)] rounded">
+                                        <label for="carpet-cleaning" class="ml-3 text-[var(--dark-text-color)]">Carpet Cleaning (+40GHS)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Preferred Date -->
+                            <div class="mb-6">
+                                <label class="block text-[var(--dark-text-color)] font-medium mb-3">
+                                    Preferred Date
+                                </label>
+                                <input type="date" id="preferred-date" class="w-full p-4 border border-[var(--light-border-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">
+                            </div>
+
+                            <!-- Preferred Time -->
+                            <div class="mb-6">
+                                <label class="block text-[var(--dark-text-color)] font-medium mb-3">
+                                    Preferred Time
+                                </label>
+                                <select id="preferred-time" class="w-full p-4 border border-[var(--light-border-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">
+                                    <option value="morning">Morning (8AM - 12PM)</option>
+                                    <option value="afternoon">Afternoon (12PM - 4PM)</option>
+                                    <option value="evening">Evening (4PM - 8PM)</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Price Estimate -->
+                    <div class="bg-gradient-to-br from-[var(--primary-color)] to-[var(--accent4-color)] rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-6">
+                            Your Estimated Cost
+                        </h3>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between items-center border-b border-white border-opacity-30 pb-3">
+                                <span>Base Cleaning:</span>
+                                <span id="base-price">150 GHS</span>
+                            </div>
+
+                            <div id="additional-services-breakdown" class="space-y-2">
+                                <!-- Additional services will be added here dynamically -->
+                            </div>
+
+                            <div class="flex justify-between items-center border-b border-white border-opacity-30 pb-3">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">150 GHS</span>
+                            </div>
+
+                            <div class="flex justify-between items-center border-b border-white border-opacity-30 pb-3">
+                                <span>Discount (20% off first cleaning):</span>
+                                <span id="discount">-30 GHS</span>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xl font-bold mt-4 pt-4 border-t border-white">
+                                <span>Total:</span>
+                                <span id="total-price" class="text-2xl">120 GHS</span>
+                            </div>
+                        </div>
+
+                        <button class="w-full bg-white text-[var(--primary-color)] py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg">
+                            Book This Service Now
+                        </button>
+
+                        <p class="text-center text-sm mt-4 opacity-80">
+                            No obligation • Free cancellation • 24/7 support
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript for calculator -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const bedroomsSlider = document.getElementById('bedrooms');
+                const bedroomsValue = document.getElementById('bedrooms-value');
+                const bathroomsSlider = document.getElementById('bathrooms');
+                const bathroomsValue = document.getElementById('bathrooms-value');
+                const serviceType = document.getElementById('service-type');
+                const basePrice = document.getElementById('base-price');
+                const subtotal = document.getElementById('subtotal');
+                const discount = document.getElementById('discount');
+                const totalPrice = document.getElementById('total-price');
+                const additionalServicesBreakdown = document.getElementById('additional-services-breakdown');
+
+                // Initial calculation
+                updateEstimate();
+
+                // Event listeners
+                bedroomsSlider.addEventListener('input', function() {
+                    bedroomsValue.textContent = this.value;
+                    updateEstimate();
+                });
+
+                bathroomsSlider.addEventListener('input', function() {
+                    bathroomsValue.textContent = this.value;
+                    updateEstimate();
+                });
+
+                serviceType.addEventListener('change', updateEstimate);
+
+                // Check additional services
+                const additionalServices = [
+                    'oven-cleaning',
+                    'fridge-cleaning',
+                    'window-cleaning',
+                    'carpet-cleaning'
+                ];
+
+                additionalServices.forEach(serviceId => {
+                    document.getElementById(serviceId).addEventListener('change', updateEstimate);
+                });
+
+                function updateEstimate() {
+                    // Calculate base price
+                    let base = 150; // Base price for home cleaning
+
+                    // Adjust for service type
+                    const type = serviceType.value;
+                    if (type === 'deep') {
+                        base = 200;
+                    } else if (type === 'office') {
+                        base = 180;
+                    } else if (type === 'move') {
+                        base = 250;
+                    } else if (type === 'post') {
+                        base = 300;
+                    }
+
+                    // Add cost for bedrooms and bathrooms
+                    const rooms = parseInt(bedroomsSlider.value);
+                    const bathrooms = parseInt(bathroomsSlider.value);
+                    base += (rooms - 3) * 15; // Additional bedrooms beyond 3
+                    base += (bathrooms - 2) * 20; // Additional bathrooms beyond 2
+
+                    // Additional services
+                    const additionalCost = getAdditionalServicesCost();
+                    const subtotalAmount = base + additionalCost;
+                    const discountAmount = subtotalAmount * 0.2; // 20% discount
+                    const totalAmount = subtotalAmount - discountAmount;
+
+                    // Update display
+                    basePrice.textContent = base + ' GHS';
+                    subtotal.textContent = subtotalAmount + ' GHS';
+                    discount.textContent = '-' + discountAmount.toFixed(2) + ' GHS';
+                    totalPrice.textContent = totalAmount.toFixed(2) + ' GHS';
+
+                    updateAdditionalServicesBreakdown();
+                }
+
+                function getAdditionalServicesCost() {
+                    let cost = 0;
+
+                    if (document.getElementById('oven-cleaning').checked) {
+                        cost += 25;
+                    }
+                    if (document.getElementById('fridge-cleaning').checked) {
+                        cost += 20;
+                    }
+                    if (document.getElementById('window-cleaning').checked) {
+                        cost += 30;
+                    }
+                    if (document.getElementById('carpet-cleaning').checked) {
+                        cost += 40;
+                    }
+
+                    return cost;
+                }
+
+                function updateAdditionalServicesBreakdown() {
+                    additionalServicesBreakdown.innerHTML = '';
+
+                    if (document.getElementById('oven-cleaning').checked) {
+                        const div = document.createElement('div');
+                        div.className = 'flex justify-between';
+                        div.innerHTML = '<span>Oven Cleaning:</span><span>+25 GHS</span>';
+                        additionalServicesBreakdown.appendChild(div);
+                    }
+
+                    if (document.getElementById('fridge-cleaning').checked) {
+                        const div = document.createElement('div');
+                        div.className = 'flex justify-between';
+                        div.innerHTML = '<span>Fridge Cleaning:</span><span>+20 GHS</span>';
+                        additionalServicesBreakdown.appendChild(div);
+                    }
+
+                    if (document.getElementById('window-cleaning').checked) {
+                        const div = document.createElement('div');
+                        div.className = 'flex justify-between';
+                        div.innerHTML = '<span>Window Cleaning:</span><span>+30 GHS</span>';
+                        additionalServicesBreakdown.appendChild(div);
+                    }
+
+                    if (document.getElementById('carpet-cleaning').checked) {
+                        const div = document.createElement('div');
+                        div.className = 'flex justify-between';
+                        div.innerHTML = '<span>Carpet Cleaning:</span><span>+40 GHS</span>';
+                        additionalServicesBreakdown.appendChild(div);
+                    }
+                }
+            });
+        </script>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section id="guarantee" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] mb-4">
+                    Our <span class="text-[var(--primary-color)]">Satisfaction Guarantee</span>
+                </h2>
+                <p class="text-lg text-[var(--gray-text-color)]">
+                    We stand behind our work with the strongest guarantees in the industry.
+                </p>
+            </div>
+
+            <div class="max-w-5xl mx-auto grid lg:grid-cols-3 gap-8">
+                <!-- 100% Satisfaction Guarantee -->
+                <div class="bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="bg-[var(--accent-color)] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-star text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                        100% Satisfaction Guarantee
+                    </h3>
+                    <p class="text-[var(--gray-text-color)] mb-4">
+                        If you're not completely satisfied with our cleaning, we'll return to re-clean at no additional cost.
+                    </p>
+                    <div class="flex items-center text-[var(--accent-color)] font-semibold">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <span>Unconditional Promise</span>
+                    </div>
+                </div>
+
+                <!-- Money-Back Guarantee -->
+                <div class="bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="bg-[var(--primary-color)] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-money-back text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                        Money-Back Guarantee
+                    </h3>
+                    <p class="text-[var(--gray-text-color)] mb-4">
+                        If we can't resolve your satisfaction within 24 hours, we'll refund your entire service fee.
+                    </p>
+                    <div class="flex items-center text-[var(--accent-color)] font-semibold">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <span>Refund Promise</span>
+                    </div>
+                </div>
+
+                <!-- Professional Guarantee -->
+                <div class="bg-gradient-to-br from-[var(--light-background-color)] to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <div class="bg-[var(--accent4-color)] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-user-shield text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[var(--dark-text-color)] mb-3">
+                        Professional Guarantee
+                    </h3>
+                    <p class="text-[var(--gray-text-color)] mb-4">
+                        Our trained professionals arrive on time with all supplies. If they're not, we'll compensate you.
+                    </p>
+                    <div class="flex items-center text-[var(--accent-color)] font-semibold">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        <span>Reliability Promise</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guarantee Banner -->
+            <div class="mt-16 bg-gradient-to-r from-[var(--accent-color)] to-[var(--primary-color)] rounded-2xl p-8 text-center text-white">
+                <h3 class="text-2xl font-bold mb-4">
+                    Why Our Guarantee Sets Us Apart
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <p class="text-3xl font-bold">24</p>
+                        <p class="text-sm">Hour Response</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <p class="text-3xl font-bold">0</p>
+                        <p class="text-sm">Risk to You</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <p class="text-3xl font-bold">100%</p>
+                        <p class="text-sm">Satisfaction Promise</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                        <p class="text-3xl font-bold">Free</p>
+                        <p class="text-sm">Re-Cleaning</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-12">
+                <p class="text-lg text-[var(--gray-text-color)] mb-6">
+                    Experience the Sora Cleaning difference with our unmatched satisfaction guarantee.
+                </p>
+                <a href="#contact" class="inline-block bg-[var(--primary-color)] text-[var(--primary-button-text-color)] px-10 py-4 rounded-[var(--button-rounded-radius)] font-bold text-lg hover:bg-[var(--primary-button-hover-bg-color)] transition-all duration-300 hover:scale-105 shadow-xl">
+                    Book With Confidence
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -748,6 +1428,246 @@
                     <i class="fas fa-envelope ml-2"></i>
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Carousel -->
+    <section class="py-20 bg-gradient-to-br from-white to-[var(--light-background-color)]">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--dark-text-color)] mb-4">
+                    What Our <span class="text-[var(--primary-color)]">Customers Say</span>
+                </h2>
+                <p class="text-lg text-[var(--gray-text-color)]">
+                    Don't just take our word for it - hear from our satisfied customers.
+                </p>
+            </div>
+
+            <!-- Carousel -->
+            <div class="relative max-w-6xl mx-auto">
+                <div class="overflow-hidden">
+                    <div class="flex transition-transform duration-500 ease-in-out" id="testimonial-carousel">
+                        <!-- Testimonial 1 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-[var(--dark-text-color)]">Kwame A.</h4>
+                                        <div class="flex text-[var(--accent-color)]">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-[var(--gray-text-color)] italic">
+                                    "Sora Cleaning transformed my home! The team was punctual, professional, and thorough. My house has never been cleaner."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-[var(--dark-text-color)]">Ama K.</h4>
+                                        <div class="flex text-[var(--accent-color)]">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-[var(--gray-text-color)] italic">
+                                    "Outstanding service! They pay attention to every detail and use eco-friendly products. Highly recommend!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-[var(--dark-text-color)]">Kofi S.</h4>
+                                        <div class="flex text-[var(--accent-color)]">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-[var(--gray-text-color)] italic">
+                                    "Professional, reliable, and affordable. Sora Cleaning is now my go-to for all my home cleaning needs."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-[var(--dark-text-color)]">Esi B.</h4>
+                                        <div class="flex text-[var(--accent-color)]">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-[var(--gray-text-color)] italic">
+                                    "The deep cleaning service was amazing. They got rid of stains I thought were permanent!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-[var(--dark-text-color)]">Yaw T.</h4>
+                                        <div class="flex text-[var(--accent-color)]">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-[var(--gray-text-color)] italic">
+                                    "Excellent office cleaning service. Our employees are more productive in the spotless environment."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 6 -->
+                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
+                            <div class="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-shadow duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-[var(--dark-text-color)]">Adwoa M.</h4>
+                                        <div class="flex text-[var(--accent-color)]">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-[var(--gray-text-color)] italic">
+                                    "Prompt, efficient, and thorough. Sora Cleaning exceeded my expectations. Will definitely book again!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button id="prev-testimonial" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-[var(--primary-color)] w-10 h-10 rounded-full shadow-lg flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-white transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-testimonial" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-[var(--primary-color)] w-10 h-10 rounded-full shadow-lg flex items-center justify-center hover:bg-[var(--primary-color)] hover:text-white transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="flex justify-center mt-8 space-x-2" id="testimonial-indicators">
+                <button class="w-3 h-3 rounded-full bg-[var(--primary-color)] opacity-50"></button>
+                <button class="w-3 h-3 rounded-full bg-[var(--primary-color)] opacity-50"></button>
+                <button class="w-3 h-3 rounded-full bg-[var(--primary-color)] opacity-50"></button>
+            </div>
+
+            <!-- JavaScript for carousel -->
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const carousel = document.getElementById('testimonial-carousel');
+                    const items = carousel.children;
+                    const totalItems = items.length;
+                    const itemsPerPage = Math.floor(carousel.parentElement.clientWidth / items[0].clientWidth) || 1;
+                    let currentPosition = 0;
+                    let currentIndex = 0;
+                    const maxIndex = Math.ceil(totalItems / itemsPerPage) - 1;
+
+                    // Update carousel position
+                    function updateCarousel() {
+                        const translateX = -currentIndex * (100 / itemsPerPage);
+                        carousel.style.transform = `translateX(${translateX}%)`;
+
+                        // Update indicators
+                        const indicators = document.querySelectorAll('#testimonial-indicators button');
+                        indicators.forEach((indicator, index) => {
+                            if (index === currentIndex) {
+                                indicator.classList.remove('opacity-50');
+                                indicator.classList.add('opacity-100');
+                            } else {
+                                indicator.classList.remove('opacity-100');
+                                indicator.classList.add('opacity-50');
+                            }
+                        });
+                    }
+
+                    // Next button
+                    document.getElementById('next-testimonial').addEventListener('click', function() {
+                        if (currentIndex < maxIndex) {
+                            currentIndex++;
+                            updateCarousel();
+                        } else {
+                            currentIndex = 0; // Loop back to start
+                            updateCarousel();
+                        }
+                    });
+
+                    // Previous button
+                    document.getElementById('prev-testimonial').addEventListener('click', function() {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            updateCarousel();
+                        } else {
+                            currentIndex = maxIndex; // Loop to end
+                            updateCarousel();
+                        }
+                    });
+
+                    // Auto-advance every 5 seconds
+                    setInterval(function() {
+                        if (currentIndex < maxIndex) {
+                            currentIndex++;
+                        } else {
+                            currentIndex = 0;
+                        }
+                        updateCarousel();
+                    }, 5000);
+
+                    // Add indicator click events
+                    document.querySelectorAll('#testimonial-indicators button').forEach((indicator, index) => {
+                        indicator.addEventListener('click', function() {
+                            currentIndex = index;
+                            updateCarousel();
+                        });
+                    });
+                });
+            </script>
         </div>
     </section>
 
